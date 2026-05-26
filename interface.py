@@ -1,6 +1,7 @@
 import os
 import signal
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -44,7 +45,7 @@ def _start_bot() -> None:
     Path("logs").mkdir(parents=True, exist_ok=True)
     # Start in a separate process so Streamlit stays responsive.
     proc = subprocess.Popen(
-        ["python", "run_bot_to_log.py"],
+        [sys.executable, "run_bot_to_log.py"],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
         start_new_session=True,
