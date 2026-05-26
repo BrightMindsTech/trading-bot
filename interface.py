@@ -7,6 +7,13 @@ from pathlib import Path
 
 import streamlit as st
 
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except Exception:
+    pass
+
 
 LOG_PATH = Path("logs/bot.log")
 PID_PATH = Path("logs/bot.pid")
